@@ -6,7 +6,25 @@
     <description>Recent content on aiyudehua&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 05 Feb 2021 16:42:35 +0800</lastBuildDate><atom:link href="https://fjnucym.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 17:58:45 +0800</lastBuildDate><atom:link href="https://fjnucym.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First_article</title>
+      <link>https://fjnucym.github.io/post/first_article/</link>
+      <pubDate>Fri, 05 Feb 2021 17:58:45 +0800</pubDate>
+      
+      <guid>https://fjnucym.github.io/post/first_article/</guid>
+      <description>[TOC]
+Qt 简介   Qt Creater 是一个跨平台的,完整的Qt集成开发环境,其中包括了高级C++代码编辑器、项目和生成管理工具、继承的上下文下相关的帮助系统、图像化调试器等等&amp;hellip;.   Qt体系框架  Qt整个设计是单根继承的
+祖先类QObject
+ Qapplication 应用程序基类 QWidget 界面基类 QLayout 界面布局类   窗口部件 基础窗口部件QWidget  QWidget 类是所有用户界面对象的基类,被成为基础窗口部件。QWidget继承自QObject类是所有支持Qt对象模型(Qt Object Model)的基类,QPaintDevice类是所有可以绘制的对象的基类。
+新建QWidget窗口&amp;amp;向窗口添加子部件
+#include &amp;lt;QWidget&amp;gt;#include &amp;lt;QLabel&amp;gt; int main() { // 新建QWidegt类对象,默认parent参数是0(不传default=0),所以它是独立的 窗口(它是窗口) 	QWidget *widget = new QWidget(); // 新建QLable对象,默认parent参数是0,所以它仍然被当作单独窗口处理  QLabel *label1 = new QLabel(); // 新建QLable对象,默认parent参数是widget,即它是widget的子部件  QWidget *label2 = new QWidget(widget); } 这里注意部件创建时如果需要它作为子部件,则我们得传入窗口的指针！
+窗口部件的定义
+ 窗口部件(Widget)这里简称部件,是Qt中建立用户界面的主要元素。像主窗口、对话框、标签、按钮、文本输入框等都是窗口部件。这些部件可以接收用户输入,显示数据和状态信息,并且可以在屏幕上绘制自己,有些也可以作为一个容器来放置其他部件
+ 窗口类型
+ 一个部件在创建时可以传入参数</description>
+    </item>
+    
     <item>
       <title>Test</title>
       <link>https://fjnucym.github.io/post/test/</link>
