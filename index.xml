@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>https://lastknightcoder.github.io/</link>
+    <link>https://fjnucym.github.io/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Feb 2021 16:10:25 +0800</lastBuildDate><atom:link href="https://lastknightcoder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 16:10:25 +0800</lastBuildDate><atom:link href="https://fjnucym.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>https://lastknightcoder.github.io/post/blog/</link>
+      <link>https://fjnucym.github.io/post/blog/</link>
       <pubDate>Fri, 05 Feb 2021 16:10:25 +0800</pubDate>
       
-      <guid>https://lastknightcoder.github.io/post/blog/</guid>
+      <guid>https://fjnucym.github.io/post/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://lastknightcoder.github.io/post/newfile/</link>
+      <link>https://fjnucym.github.io/post/newfile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lastknightcoder.github.io/post/newfile/</guid>
-      <description></description>
+      <guid>https://fjnucym.github.io/post/newfile/</guid>
+      <description>221321421</description>
     </item>
     
   </channel>
