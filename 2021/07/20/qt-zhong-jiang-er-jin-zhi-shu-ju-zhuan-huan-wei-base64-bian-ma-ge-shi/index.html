@@ -5,7 +5,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Qt中将二进制数据转换为Base64编码格式, 爱雨的花">
-    <meta name="description" content="描述测试">
+    <meta name="description" content="青春如花般绽放">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -155,7 +155,7 @@
         <div class="logo-name">爱雨的花</div>
         <div class="logo-desc">
             
-            描述测试
+            青春如花般绽放
             
         </div>
     </div>
@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    853
+                    884
                 </div>
                 
 
@@ -515,15 +515,48 @@
 <p>Base64是网络上最常见的用于传输字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。可查看RFC2045～RFC2049，上面有MIME的详细规范。</p>
 <p>Base64编码是从二进制到字符的过程，可用于在HTTP环境下传递较长的标识信息。采用Base64编码具有不可读性，需要解码后才能阅读。</p>
 </blockquote>
-<h2 id="QByteArray-binary-gt-QByteArray-base64"><a href="#QByteArray-binary-gt-QByteArray-base64" class="headerlink" title="QByteArray(binary) -&gt; QByteArray(base64)"></a>QByteArray(binary) -&gt; QByteArray(base64)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QFile&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QString&gt;</span></span></span><br><span class="line"><span class="function">QByteArray <span class="title">openBinaryFileAndGetBase64</span><span class="params">(QString fileName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ---------------打开文件，加载二进制文件----------------</span></span><br><span class="line">    <span class="function">QFile <span class="title">file</span><span class="params">(<span class="string">&quot;image/picture.jpg&quot;</span>)</span></span>;	<span class="comment">// 当然，你可以使用变量fileName</span></span><br><span class="line">    <span class="comment">// [重要] QIODevice使用前必须显示使用open</span></span><br><span class="line">    <span class="keyword">if</span>(!file.<span class="built_in">open</span>(QIODevice::ReadOnly))&#123;</span><br><span class="line">		<span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;open file error&quot;</span>;</span><br><span class="line">    &#125;	</span><br><span class="line">    QByteArray byteArray = file.<span class="built_in">readAll</span>();</span><br><span class="line">    <span class="comment">// ----------------二进制字符数组转base64字符---------</span></span><br><span class="line">    byteArray = byteArray.<span class="built_in">toBase64</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> byteArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="QByteArray-binary-gt-QByteArray-base64"><a href="#QByteArray-binary-gt-QByteArray-base64" class="headerlink" title="QByteArray(binary) -&gt; QByteArray(base64)"></a>QByteArray(binary) -&gt; QByteArray(base64)</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;QFile&gt;
+#include &lt;QString&gt;
+QByteArray openBinaryFileAndGetBase64(QString fileName)
+&#123;
+    &#x2F;&#x2F; ---------------打开文件，加载二进制文件----------------
+    QFile file(&quot;image&#x2F;picture.jpg&quot;);	&#x2F;&#x2F; 当然，你可以使用变量fileName
+    &#x2F;&#x2F; [重要] QIODevice使用前必须显示使用open
+    if(!file.open(QIODevice::ReadOnly))&#123;
+		qDebug() &lt;&lt; &quot;open file error&quot;;
+    &#125;	
+    QByteArray byteArray &#x3D; file.readAll();
+    &#x2F;&#x2F; ----------------二进制字符数组转base64字符---------
+    byteArray &#x3D; byteArray.toBase64();
+
+    return byteArray;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>很简单，但是很遗憾，虽然QByteArray本身使用字符类型数组作为底层数据结构，QJson却不支持直接使用QByteArray传图片（QJson没有这个基本类型啊！！！）。所以我们需要将QByteArray（base64）-&gt; QString 才能存QJson里边（QJson的基本类型有QString）。</p>
-<h2 id="QByteArray（base64）-gt-QString-base64"><a href="#QByteArray（base64）-gt-QString-base64" class="headerlink" title="QByteArray（base64） -&gt; QString(base64)"></a>QByteArray（base64） -&gt; QString(base64)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QFile&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QString&gt;</span></span></span><br><span class="line"><span class="function">QString <span class="title">byteArray2Base64String</span><span class="params">(QString fileName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QFile <span class="title">file</span><span class="params">(<span class="string">&quot;image/picture.jpg&quot;</span>)</span></span>;	<span class="comment">// 当然，你可以使用变量fileName</span></span><br><span class="line">    <span class="comment">//[重要] QIODevice使用前必须显示使用open</span></span><br><span class="line">    <span class="keyword">if</span>(!file.<span class="built_in">open</span>(QIODevice::ReadOnly))&#123;</span><br><span class="line">		<span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;open file error&quot;</span>;</span><br><span class="line">    &#125;	</span><br><span class="line">    QByteArray byteArray = file.<span class="built_in">readAll</span>();</span><br><span class="line">    QString base64String = QString::<span class="built_in">fromUtf8</span>(byteArray.<span class="built_in">toBase64</span>());</span><br><span class="line">    <span class="comment">// base64字符都很长（超级长），直接打印控制无法显示</span></span><br><span class="line">    <span class="comment">// 使用QString::mid(int pos, int n); 打印1000个字符看看样子</span></span><br><span class="line">    <span class="comment">// qDebug() &lt;&lt; base64String.mid(0, 1000);</span></span><br><span class="line">    <span class="keyword">return</span> base64String;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="QByteArray（base64）-gt-QString-base64"><a href="#QByteArray（base64）-gt-QString-base64" class="headerlink" title="QByteArray（base64） -&gt; QString(base64)"></a>QByteArray（base64） -&gt; QString(base64)</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;QFile&gt;
+#include &lt;QString&gt;
+QString byteArray2Base64String(QString fileName)
+&#123;
+    QFile file(&quot;image&#x2F;picture.jpg&quot;);	&#x2F;&#x2F; 当然，你可以使用变量fileName
+    &#x2F;&#x2F;[重要] QIODevice使用前必须显示使用open
+    if(!file.open(QIODevice::ReadOnly))&#123;
+		qDebug() &lt;&lt; &quot;open file error&quot;;
+    &#125;	
+    QByteArray byteArray &#x3D; file.readAll();
+    QString base64String &#x3D; QString::fromUtf8(byteArray.toBase64());
+    &#x2F;&#x2F; base64字符都很长（超级长），直接打印控制无法显示
+    &#x2F;&#x2F; 使用QString::mid(int pos, int n); 打印1000个字符看看样子
+    &#x2F;&#x2F; qDebug() &lt;&lt; base64String.mid(0, 1000);
+    return base64String;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>*static QString QString::fromUtf8(const QByteArray &amp;)*支持从QByteArray载入字符，作为转换。</p>
 <p><strong>结果预览</strong></p>
 <p><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210514193333008.png" alt="image-20210514193333008"></p>
-<h2 id="QString-base64-gt-QByteArray"><a href="#QString-base64-gt-QByteArray" class="headerlink" title="QString(base64) -&gt; QByteArray"></a>QString(base64) -&gt; QByteArray</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QByteArray&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">string2Base64</span><span class="params">(QString&amp; baseStr, QByteArray &amp;byteArray)</span></span>&#123;</span><br><span class="line">	byteArray = byteArray.<span class="built_in">fromBase64</span>(baseStr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="QString-base64-gt-QByteArray"><a href="#QString-base64-gt-QByteArray" class="headerlink" title="QString(base64) -&gt; QByteArray"></a>QString(base64) -&gt; QByteArray</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;QByteArray&gt;
+void string2Base64(QString&amp; baseStr, QByteArray &amp;byteArray)&#123;
+	byteArray &#x3D; byteArray.fromBase64(baseStr);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>直接利用*QByteArray::fromBase64(const QByteArray &amp;)*就能实现。那为什么要用函数呢？</p>
 <p><strong>原因</strong></p>
@@ -532,7 +565,16 @@
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Vancamel/p/11346282.html">Qt框架浅析之一 ——- 隐式共享(Implicit Sharing)</a></p>
 <p><strong>另外</strong></p>
 <p>不可以直接使用构造函数来构造QByteArray，那样的出来的QByteArray并不是Utf8类型的，他的数据和原始数据是不对应的。谨记！</p>
-<h2 id="打开二进制文件直接打印是什么样子？"><a href="#打开二进制文件直接打印是什么样子？" class="headerlink" title="打开二进制文件直接打印是什么样子？"></a>打开二进制文件直接打印是什么样子？</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printBinaryFile</span><span class="params">(QString fileName)</span></span>&#123;</span><br><span class="line">    <span class="function">QFile <span class="title">file</span><span class="params">(<span class="string">&quot;image/picture.jpg&quot;</span>)</span></span>;	<span class="comment">// 当然，你可以使用变量fileName</span></span><br><span class="line">    <span class="comment">//[重要] QIODevice使用前必须显示使用open</span></span><br><span class="line">    <span class="keyword">if</span>(!file.<span class="built_in">open</span>(QIODevice::ReadOnly))&#123;</span><br><span class="line">        <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;open file error&quot;</span>;	</span><br><span class="line">    &#125;</span><br><span class="line">    QByteArray byteArray = file.<span class="built_in">readAll</span>();</span><br><span class="line">    <span class="comment">//[重要] 文件太大Qt无法打印的，只取1000个看看</span></span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; byteArray.<span class="built_in">mid</span>(<span class="number">0</span>, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="打开二进制文件直接打印是什么样子？"><a href="#打开二进制文件直接打印是什么样子？" class="headerlink" title="打开二进制文件直接打印是什么样子？"></a>打开二进制文件直接打印是什么样子？</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void printBinaryFile(QString fileName)&#123;
+    QFile file(&quot;image&#x2F;picture.jpg&quot;);	&#x2F;&#x2F; 当然，你可以使用变量fileName
+    &#x2F;&#x2F;[重要] QIODevice使用前必须显示使用open
+    if(!file.open(QIODevice::ReadOnly))&#123;
+        qDebug() &lt;&lt; &quot;open file error&quot;;	
+    &#125;
+    QByteArray byteArray &#x3D; file.readAll();
+    &#x2F;&#x2F;[重要] 文件太大Qt无法打印的，只取1000个看看
+    qDebug() &lt;&lt; byteArray.mid(0, 1000);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>结果预览</strong></p>
 <p><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210514195933865.png" alt="image-20210514195933865"></p>

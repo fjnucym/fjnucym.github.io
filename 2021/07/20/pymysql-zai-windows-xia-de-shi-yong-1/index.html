@@ -5,7 +5,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="pymysql在Windows下的使用, 爱雨的花">
-    <meta name="description" content="描述测试">
+    <meta name="description" content="青春如花般绽放">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -155,7 +155,7 @@
         <div class="logo-name">爱雨的花</div>
         <div class="logo-desc">
             
-            描述测试
+            青春如花般绽放
             
         </div>
     </div>
@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    407
+                    408
                 </div>
                 
 
@@ -516,7 +516,7 @@
 
 <p>进入解压后目录下的bin文件夹，此处能够启动mysql.exe程序。</p>
 <p>输入以下命令并回车，初始化mysql…… 同时可以获取mysql的root账户生成的随机初始密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysqld --initialize --console<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>结果如下， 但由于初始化过一次。这里使用D:\Environment\mysql-8.0.25-winx64\data 下的 ==LAPTOP-65M4UVJB.err==文件里的内容代替。（目测日志输出都会在这里，只要找到以.err为后缀的文件用记事本打开即可）</p>
 <p>密码是红色标明的位置。</p>
@@ -524,20 +524,21 @@
 <p align="center">一定要记住密码！实在实在不行去文件里看</p>
 
 <p><strong>启动mysql服务</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br><span class="line">sc start mysql</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">net start mysql
+sc start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p align="center"><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210710212153589.png" /> </p>
 <p align="center"></p>
 
 <p><strong>进入mysql命令行</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p	# 登陆root账户</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql -u root -p	# 登陆root账户<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>需要输入密码</p>
 <p>账号:root  密码:初始化生成的</p>
 <p align="center"><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210710212335881.png" /> </p>
 <p align="center">修改mysql账号密码</p>
 
-<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified by &#x27;想要设置的密码&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;想要设置的密码&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><em>改个简单的密码！</em></p>
 <h2 id="修改系统环境变量，任意处启动mysql命令行"><a href="#修改系统环境变量，任意处启动mysql命令行" class="headerlink" title="修改系统环境变量，任意处启动mysql命令行"></a>修改系统环境变量，任意处启动mysql命令行</h2><p>将==D:\Environment\mysql-8.0.25-winx64\bin==加入到系统环境变量中</p>

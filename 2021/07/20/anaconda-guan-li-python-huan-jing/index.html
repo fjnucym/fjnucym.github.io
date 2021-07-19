@@ -5,7 +5,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="anaconda管理python环境, 爱雨的花">
-    <meta name="description" content="描述测试">
+    <meta name="description" content="青春如花般绽放">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -155,7 +155,7 @@
         <div class="logo-name">爱雨的花</div>
         <div class="logo-desc">
             
-            描述测试
+            青春如花般绽放
             
         </div>
     </div>
@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    425
+                    427
                 </div>
                 
 
@@ -520,23 +520,24 @@
 <p align="center">创建一个包含完整依赖包的工程</p>
 
 <p><strong>查看anaconda所有已创建的环境</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info -e # 控制台下</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda info -e # 控制台下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p align="center"><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210623231759367.png" /> </p>
 <p align="center">查看已创建的环境</p>
 
 <p><strong>激活环境</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">activate 工程名</span><br><span class="line"><span class="comment"># 例 activate Test</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">activate 工程名
+# 例 activate Test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p align="center"><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210711234256673.png" /> </p>             <p align="center">进入learn-demo虚拟环境</p>
 
 <p><strong>安装只属于此环境的依赖包</strong></p>
 <p>进入新创建的环境后我们可以使用pip工具安装只属于此环境的依赖包</p>
 <p>①使用离线文件(如.whl)安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 文件全路径 # 可以将文件拖入控制台</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install 文件全路径 # 可以将文件拖入控制台<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>②在线安装(无翻墙情况下很慢)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy==1.18.5	# 指定安装包的版本</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install numpy&#x3D;&#x3D;1.18.5	# 指定安装包的版本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>python依赖包的获取网址</strong></p>
 <p>python使用pip工具进行包管理，有时候需要下载离线包，可以从pypi网址上搜索各个版本的安装包。</p>
