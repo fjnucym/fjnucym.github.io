@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>爱雨的花的博客</title>
+  
+  <subtitle>记录学习中的点滴</subtitle>
+  <link href="https://fjnucym.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://fjnucym.github.io/"/>
+  <updated>2021-07-20T09:46:43.748Z</updated>
+  <id>https://fjnucym.github.io/</id>
+  
+  <author>
+    <name>爱雨的花</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt中将二进制数据转换为Base64编码格式</title>
+    <link href="https://fjnucym.github.io/2021/07/20/qt-zhong-jiang-er-jin-zhi-shu-ju-zhuan-huan-wei-base64-bian-ma-ge-shi/"/>
+    <id>https://fjnucym.github.io/2021/07/20/qt-zhong-jiang-er-jin-zhi-shu-ju-zhuan-huan-wei-base64-bian-ma-ge-shi/</id>
+    <published>2021-07-19T16:43:58.000Z</published>
+    <updated>2021-07-20T09:46:43.748Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Qt" scheme="https://fjnucym.github.io/categories/Qt/"/>
+    
+    
+    <category term="Qt" scheme="https://fjnucym.github.io/tags/Qt/"/>
+    
+    <category term="Json" scheme="https://fjnucym.github.io/tags/Json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL中获取自增主键的最新自增值</title>
+    <link href="https://fjnucym.github.io/2021/07/20/mysql-zhong-huo-qu-zi-zeng-zhu-jian-de-zui-xin-zi-zeng-zhi/"/>
+    <id>https://fjnucym.github.io/2021/07/20/mysql-zhong-huo-qu-zi-zeng-zhu-jian-de-zui-xin-zi-zeng-zhi/</id>
+    <published>2021-07-19T16:40:31.000Z</published>
+    <updated>2021-07-20T09:46:20.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;MySql中插入数据时获取新增的主键&quot;&gt;&lt;a href=&quot;#MySql中插入数据时获取新增的主键&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://fjnucym.github.io/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://fjnucym.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>anaconda管理python环境</title>
+    <link href="https://fjnucym.github.io/2021/07/20/anaconda-guan-li-python-huan-jing/"/>
+    <id>https://fjnucym.github.io/2021/07/20/anaconda-guan-li-python-huan-jing/</id>
+    <published>2021-07-19T16:30:58.000Z</published>
+    <updated>2021-07-20T09:48:52.804Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装python&quot;&gt;&lt;a href=&quot;#安装python&quot; class=&quot;headerlink&quot; title=&quot;安装python&quot;&gt;&lt;/a&gt;安装python&lt;/h2&gt;&lt;h3 id=&quot;使用anoconda管理python版本&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://fjnucym.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://fjnucym.github.io/tags/python/"/>
+    
+    <category term="anaconda" scheme="https://fjnucym.github.io/tags/anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pymysql在Windows下的使用</title>
+    <link href="https://fjnucym.github.io/2021/07/20/pymysql-zai-windows-xia-de-shi-yong/"/>
+    <id>https://fjnucym.github.io/2021/07/20/pymysql-zai-windows-xia-de-shi-yong/</id>
+    <published>2021-07-19T16:27:19.000Z</published>
+    <updated>2021-07-20T09:46:35.134Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;windows上的MySQL服务安装&quot;&gt;&lt;a href=&quot;#windows上的MySQL服务安装&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://fjnucym.github.io/categories/python/"/>
+    
+    
+    <category term="MySQL" scheme="https://fjnucym.github.io/tags/MySQL/"/>
+    
+    <category term="python" scheme="https://fjnucym.github.io/tags/python/"/>
+    
+  </entry>
+  
+</feed>
