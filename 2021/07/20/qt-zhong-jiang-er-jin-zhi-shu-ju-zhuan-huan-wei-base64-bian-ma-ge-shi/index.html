@@ -138,6 +138,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -237,6 +248,17 @@
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
 		</a>
           
         </li>
@@ -490,14 +512,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-07-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    884
+                    853
                 </div>
                 
 
@@ -528,22 +550,22 @@
 <p>Base64是网络上最常见的用于传输字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。可查看RFC2045～RFC2049，上面有MIME的详细规范。</p>
 <p>Base64编码是从二进制到字符的过程，可用于在HTTP环境下传递较长的标识信息。采用Base64编码具有不可读性，需要解码后才能阅读。</p>
 </blockquote>
-<h2 id="QByteArray-binary-gt-QByteArray-base64"><a href="#QByteArray-binary-gt-QByteArray-base64" class="headerlink" title="QByteArray(binary) -&gt; QByteArray(base64)"></a>QByteArray(binary) -&gt; QByteArray(base64)</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;QFile&gt;
-#include &lt;QString&gt;
-QByteArray openBinaryFileAndGetBase64(QString fileName)
-&#123;
-    &#x2F;&#x2F; ---------------打开文件，加载二进制文件----------------
-    QFile file(&quot;image&#x2F;picture.jpg&quot;);	&#x2F;&#x2F; 当然，你可以使用变量fileName
-    &#x2F;&#x2F; [重要] QIODevice使用前必须显示使用open
-    if(!file.open(QIODevice::ReadOnly))&#123;
-		qDebug() &lt;&lt; &quot;open file error&quot;;
-    &#125;	
-    QByteArray byteArray &#x3D; file.readAll();
-    &#x2F;&#x2F; ----------------二进制字符数组转base64字符---------
-    byteArray &#x3D; byteArray.toBase64();
+<h2 id="QByteArray-binary-gt-QByteArray-base64"><a href="#QByteArray-binary-gt-QByteArray-base64" class="headerlink" title="QByteArray(binary) -&gt; QByteArray(base64)"></a>QByteArray(binary) -&gt; QByteArray(base64)</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;QFile></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;QString></span></span>
+QByteArray <span class="token function">openBinaryFileAndGetBase64</span><span class="token punctuation">(</span>QString fileName<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token comment">// ---------------打开文件，加载二进制文件----------------</span>
+    QFile <span class="token function">file</span><span class="token punctuation">(</span><span class="token string">"image/picture.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 当然，你可以使用变量fileName</span>
+    <span class="token comment">// [重要] QIODevice使用前必须显示使用open</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>QIODevice<span class="token double-colon punctuation">::</span>ReadOnly<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token function">qDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"open file error"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>	
+    QByteArray byteArray <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">readAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ----------------二进制字符数组转base64字符---------</span>
+    byteArray <span class="token operator">=</span> byteArray<span class="token punctuation">.</span><span class="token function">toBase64</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return byteArray;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> byteArray<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>很简单，但是很遗憾，虽然QByteArray本身使用字符类型数组作为底层数据结构，QJson却不支持直接使用QByteArray传图片（QJson没有这个基本类型啊！！！）。所以我们需要将QByteArray（base64）-&gt; QString 才能存QJson里边（QJson的基本类型有QString）。</p>
 <h2 id="QByteArray（base64）-gt-QString-base64"><a href="#QByteArray（base64）-gt-QString-base64" class="headerlink" title="QByteArray（base64） -&gt; QString(base64)"></a>QByteArray（base64） -&gt; QString(base64)</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;QFile&gt;
@@ -566,10 +588,10 @@ QString byteArray2Base64String(QString fileName)
 <p>*static QString QString::fromUtf8(const QByteArray &amp;)*支持从QByteArray载入字符，作为转换。</p>
 <p><strong>结果预览</strong></p>
 <p><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210514193333008.png" alt="image-20210514193333008"></p>
-<h2 id="QString-base64-gt-QByteArray"><a href="#QString-base64-gt-QByteArray" class="headerlink" title="QString(base64) -&gt; QByteArray"></a>QString(base64) -&gt; QByteArray</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;QByteArray&gt;
-void string2Base64(QString&amp; baseStr, QByteArray &amp;byteArray)&#123;
-	byteArray &#x3D; byteArray.fromBase64(baseStr);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="QString-base64-gt-QByteArray"><a href="#QString-base64-gt-QByteArray" class="headerlink" title="QString(base64) -&gt; QByteArray"></a>QString(base64) -&gt; QByteArray</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;QByteArray></span></span>
+<span class="token keyword">void</span> <span class="token function">string2Base64</span><span class="token punctuation">(</span>QString<span class="token operator">&amp;</span> baseStr<span class="token punctuation">,</span> QByteArray <span class="token operator">&amp;</span>byteArray<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	byteArray <span class="token operator">=</span> byteArray<span class="token punctuation">.</span><span class="token function">fromBase64</span><span class="token punctuation">(</span>baseStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>直接利用*QByteArray::fromBase64(const QByteArray &amp;)*就能实现。那为什么要用函数呢？</p>
 <p><strong>原因</strong></p>
@@ -578,16 +600,16 @@ void string2Base64(QString&amp; baseStr, QByteArray &amp;byteArray)&#123;
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Vancamel/p/11346282.html">Qt框架浅析之一 ——- 隐式共享(Implicit Sharing)</a></p>
 <p><strong>另外</strong></p>
 <p>不可以直接使用构造函数来构造QByteArray，那样的出来的QByteArray并不是Utf8类型的，他的数据和原始数据是不对应的。谨记！</p>
-<h2 id="打开二进制文件直接打印是什么样子？"><a href="#打开二进制文件直接打印是什么样子？" class="headerlink" title="打开二进制文件直接打印是什么样子？"></a>打开二进制文件直接打印是什么样子？</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void printBinaryFile(QString fileName)&#123;
-    QFile file(&quot;image&#x2F;picture.jpg&quot;);	&#x2F;&#x2F; 当然，你可以使用变量fileName
-    &#x2F;&#x2F;[重要] QIODevice使用前必须显示使用open
-    if(!file.open(QIODevice::ReadOnly))&#123;
-        qDebug() &lt;&lt; &quot;open file error&quot;;	
-    &#125;
-    QByteArray byteArray &#x3D; file.readAll();
-    &#x2F;&#x2F;[重要] 文件太大Qt无法打印的，只取1000个看看
-    qDebug() &lt;&lt; byteArray.mid(0, 1000);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="打开二进制文件直接打印是什么样子？"><a href="#打开二进制文件直接打印是什么样子？" class="headerlink" title="打开二进制文件直接打印是什么样子？"></a>打开二进制文件直接打印是什么样子？</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">printBinaryFile</span><span class="token punctuation">(</span>QString fileName<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    QFile <span class="token function">file</span><span class="token punctuation">(</span><span class="token string">"image/picture.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 当然，你可以使用变量fileName</span>
+    <span class="token comment">//[重要] QIODevice使用前必须显示使用open</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>QIODevice<span class="token double-colon punctuation">::</span>ReadOnly<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">qDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"open file error"</span><span class="token punctuation">;</span>	
+    <span class="token punctuation">&#125;</span>
+    QByteArray byteArray <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">readAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//[重要] 文件太大Qt无法打印的，只取1000个看看</span>
+    <span class="token function">qDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> byteArray<span class="token punctuation">.</span><span class="token function">mid</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>结果预览</strong></p>
 <p><img src="https://gitee.com/aiyudehua/drawing-bed/raw/master/https://gitee.com/aiyudehua/drawing-bed/tree/master/img/image-20210514195933865.png" alt="image-20210514195933865"></p>
